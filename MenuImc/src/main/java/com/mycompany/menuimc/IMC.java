@@ -4,8 +4,6 @@
  */
 package com.mycompany.menuimc;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Admin
@@ -75,4 +73,7 @@ public class IMC {
             setPeso(peso);
             setAltura(altura);   
 }
+    public void sair(){
+        System.exit(0);
+    }
 }
