@@ -17,6 +17,10 @@ public class Situacao {
     public Situacao(String situacao){
         this.situacao = situacao;
     }
+    
+    public Situacao(){
+        this("");
+    }
 
     /**
      * @return the situacao
@@ -41,7 +45,7 @@ public class Situacao {
             setSituacao("Peso normal");
         }
         }
-          if (p.getImc() >=25 && p.getImc() <29.9) {
+          if (p.getImc() >24.9 && p.getImc() <= 29.9) {
             setSituacao("Excesso de peso");
         }
            else {

@@ -19,6 +19,7 @@ public class MenuImc {
     public MenuImc(){
      
         this.imc = new IMC();
+        this.situacao = new Situacao();
         this.opcao = -1;
         this.conversor = new ConversorNumeros();
         this.io = new EntradaSaidaDados();          
@@ -38,41 +39,35 @@ public class MenuImc {
                 +"\n 3 - Calcular IMC:"
                 +"\n 4 - Verificar Situação:"
                 +"\n 5 - Sair: ";
-        String entradaDados = io.entradaDados(mensagemMenu);
-        this.opcao = conversor.stringToInt(entradaDados);
+        String opcao = io.entradaDados(mensagemMenu);
+        this.opcao = conversor.stringToInt(opcao);
     }
    public void avaliarOpcaoEscolhida(){
         String saida;
-        double Altura=0, Peso=0;
         switch(this.opcao){
+            
             case 1 :
-            String mensagemEntrada = "Digite sua Altura: ";
-            Altura = conversor.stringToDouble(io.entradaDados(mensagemEntrada));
-            mensagemEntrada = "Digite seu Peso: ";
-            Peso = conversor.stringToDouble(io.entradaDados(mensagemEntrada));
-            imc.cadastrarDados(Peso, Altura);
+            imc.cadastrarDados(conversor.stringToDouble(io.entradaDados("Digite seu Peso: ")), 
+            conversor.stringToDouble(io.entradaDados("Digite sua Altura: ")));
             break;
             
             case 2:
-            saida="Dados Inseridos:\nAltura: " + imc.getAltura() + "\nPeso: " + imc.getPeso();
-            io.saidaDados(saida);
+            io.saidaDados("Dados Inseridos:\nAltura: " + imc.getAltura() + "\nPeso: " + imc.getPeso());
             break;
             
             case 3:
                 imc.calcular();
-                saida="O seu IMC é:  " + imc.getImc();
-                io.saidaDados(saida);
-                break;
+                io.saidaDados("O seu IMC é:  " + imc.getImc());
+            break;
                 
-             case 4:
+            case 4:
                 situacao.verificarSituacao(imc);
-                saida = "Sua situação é: " + situacao.getSituacao();
-                io.saidaDados(saida);
-             break;
+                io.saidaDados("Sua situação é: " + situacao.getSituacao());
+            break;
              
-                case 5:
+            case 5:
                 imc.sair();
-                break;
+            break;
                 
             default:
                 io.saidaDados("Opção inválida");
