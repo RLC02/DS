@@ -26,21 +26,147 @@ public class Design_Tela extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        LblCod = new javax.swing.JLabel();
+        LblNome = new javax.swing.JLabel();
+        LblData = new javax.swing.JLabel();
+        LblTelefone = new javax.swing.JLabel();
+        LblEmail = new javax.swing.JLabel();
+        JftxtCod = new javax.swing.JFormattedTextField();
+        JtxtNome = new javax.swing.JFormattedTextField();
+        JftxtTelefone = new javax.swing.JFormattedTextField();
+        JftxtData = new javax.swing.JFormattedTextField();
+        JftxtEmail = new javax.swing.JFormattedTextField();
+        JsScroll = new javax.swing.JScrollPane();
+        JTable = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        LblCod.setText("Codigo:");
+
+        LblNome.setText("Nome:");
+
+        LblData.setText("Data Nascimento:");
+
+        LblTelefone.setText("Telefone:");
+
+        LblEmail.setText("Email:");
+
+        JftxtCod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JftxtCodActionPerformed(evt);
+            }
+        });
+
+        JtxtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JtxtNomeActionPerformed(evt);
+            }
+        });
+
+        JftxtData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JftxtDataActionPerformed(evt);
+            }
+        });
+
+        JsScroll.setToolTipText("");
+        JsScroll.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JsScroll.setHorizontalScrollBar(null);
+
+        JTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                " Código", "Nome", "Data Nascimento", "Telefone", "Email"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        JsScroll.setViewportView(JTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(LblEmail)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JftxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(LblTelefone)
+                                .addGap(84, 84, 84)
+                                .addComponent(JftxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblData)
+                                    .addComponent(LblNome)
+                                    .addComponent(LblCod))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(JftxtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JtxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(JftxtData, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(JsScroll, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE))
+                .addGap(55, 55, 55))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblCod)
+                    .addComponent(JftxtCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblNome)
+                    .addComponent(JtxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblData)
+                    .addComponent(JftxtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblTelefone)
+                    .addComponent(JftxtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LblEmail)
+                    .addComponent(JftxtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55)
+                .addComponent(JsScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JtxtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JtxtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JtxtNomeActionPerformed
+
+    private void JftxtCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JftxtCodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JftxtCodActionPerformed
+
+    private void JftxtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JftxtDataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JftxtDataActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +204,17 @@ public class Design_Tela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable JTable;
+    private javax.swing.JFormattedTextField JftxtCod;
+    private javax.swing.JFormattedTextField JftxtData;
+    private javax.swing.JFormattedTextField JftxtEmail;
+    private javax.swing.JFormattedTextField JftxtTelefone;
+    private javax.swing.JScrollPane JsScroll;
+    private javax.swing.JFormattedTextField JtxtNome;
+    private javax.swing.JLabel LblCod;
+    private javax.swing.JLabel LblData;
+    private javax.swing.JLabel LblEmail;
+    private javax.swing.JLabel LblNome;
+    private javax.swing.JLabel LblTelefone;
     // End of variables declaration//GEN-END:variables
 }
