@@ -196,17 +196,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void BtnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCalcularActionPerformed
         // TODO add your handling code here:
-        var VTOTAL = Double.parseDouble(TxtVTotal.getText());
-        var IRRF = Double.parseDouble(TxtIrrf.getText())/100;
-        var PIS = Double.parseDouble(TxtPis.getText())/100;
-        var COFINS = Double.parseDouble(TxtCofins.getText())/100;
-        var CSLL = Double.parseDouble(TxtCsll.getText())/100;
+        Double VTOTAL = Double.parseDouble(TxtVTotal.getText());
+        Double IRRF = Double.parseDouble(TxtIrrf.getText())/100;
+        Double PIS = Double.parseDouble(TxtPis.getText())/100;
+        Double COFINS = Double.parseDouble(TxtCofins.getText())/100;
+        Double CSLL = Double.parseDouble(TxtCsll.getText())/100;
         
-        var VIRRF = VTOTAL * IRRF;
-        var VPIS = VTOTAL * PIS;
-        var VCOFINS = VTOTAL * COFINS;
-        var VCSLL = VTOTAL * CSLL;
-        var VFINAL = VTOTAL + VIRRF + VPIS + VCOFINS + VCSLL;
+        Double VIRRF = VTOTAL * IRRF;
+        Double VPIS = VTOTAL * PIS;
+        Double VCOFINS = VTOTAL * COFINS;
+        Double VCSLL = VTOTAL * CSLL;
+        Double VFINAL = VTOTAL + VIRRF + VPIS + VCOFINS + VCSLL;
         JOptionPane.showMessageDialog(null, "A Taxa de IRRF é: " + VIRRF + "\nA Taxa de PIS é: " + VPIS +"\nA Taxa de COFINS é: " + VCOFINS + "\nA Taxa de VCSLL é: " + VCSLL );
         JOptionPane.showMessageDialog(null, "O Valor final com a taxa descontada é " + VFINAL);
     }//GEN-LAST:event_BtnCalcularActionPerformed
